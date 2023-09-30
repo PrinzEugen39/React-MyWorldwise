@@ -12,7 +12,7 @@ import City from "./component/City";
 import CountriesList from "./component/CountryList";
 import Form from "./component/Form";
 
-const BASE_URL = "http://localhost:8001";
+const BASE_URL = "https://api.npoint.io/2957bdc7c29a47fa0f4b";
 
 function App() {
   const [cities, setCities] = useState([]);
