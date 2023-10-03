@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./Map.module.css";
 import {
   MapContainer,
@@ -12,19 +12,19 @@ import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
 import { useGeolocation } from "../hooks/useGeolocation";
 import Button from "./Button";
+import { useUrlPosition } from "../hooks/useUrlPosition";
 
 function Map() {
   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
-  const [searchParams] = useSearchParams();
+
   const {
     isLoading: isLoadingPosition,
     position: geoLocationPosition,
     getPosition,
   } = useGeolocation();
 
-  const mapLat = searchParams.get("latitude");
-  const mapLng = searchParams.get("longitude");
+  const [mapLat, mapLng] = useUrlPosition();
 
   useEffect(() => {
     if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
@@ -47,6 +47,7 @@ function Map() {
         scrollWheelZoom={true}
         className={styles.map}
       >
+        <UseYourPosition center={mapPosition} />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
@@ -66,6 +67,12 @@ function Map() {
   );
 }
 
+function UseYourPosition({ center }) {
+  const map = useMap();
+  map.setView(center);
+  return null;
+}
+
 function ChangeCenter({ position }) {
   const map = useMap();
   if (!position[0] || !position[1]) return null;
@@ -77,7 +84,9 @@ function DetectClick() {
   const navigate = useNavigate();
   useMapEvent({
     click: (e) => {
-      navigate(`form?latitude=${e.latlng.lat}&longitude=${e.latlng.lng}`);
+      navigate(`form?latitude=${e.latlng.lat}&longitude=${e.latlng.lng}`, {
+        replace: true,
+      });
     },
   });
 }

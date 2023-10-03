@@ -1,30 +1,6 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2023-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": 73930385
-    },
-    {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2022-07-15T08:22:53.976Z",
-      "notes": "Real madrid",
-      "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": 17806751
-    },
-    {
       "cityName": "Berlin",
       "country": "Germany",
       "emoji": "🇩🇪",
@@ -47,6 +23,42 @@
         "lng": 106.81552518248368
       },
       "id": 34235562
+    },
+    {
+      "cityName": "Medina",
+      "country": "Saudi Arabia",
+      "emoji": "🇸🇦",
+      "date": "2023-10-03T01:16:07.806Z",
+      "notes": "Alhamdulillah gaes",
+      "position": {
+        "lat": "24.46206463266572",
+        "lng": "39.6110629486807"
+      },
+      "id": 98443198
+    },
+    {
+      "cityName": "Tokyo",
+      "country": "Japan",
+      "emoji": "🇯🇵",
+      "date": "2023-10-03T01:16:45.164Z",
+      "notes": "Nyan",
+      "position": {
+        "lat": "35.65645656227408",
+        "lng": "139.79287137069892"
+      },
+      "id": 98443199
+    },
+    {
+      "cityName": "Villeneuve-le-Roi",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2023-10-03T01:17:07.282Z",
+      "notes": "Oui 🗿",
+      "position": {
+        "lat": "48.745724767410245",
+        "lng": "2.4241045533415972"
+      },
+      "id": 98443200
     }
   ]
 }
