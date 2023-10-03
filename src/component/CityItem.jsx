@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 import styles from "./CityItem.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useCities } from "../contexts/CitiesContext";
 
 const formatDate = (date) =>
@@ -12,7 +12,7 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function CityItem({ city }) {
-  const navigate = useNavigate()
+
   const { currentCity, deleteCity } = useCities()
   const { cityName, emoji, date, id, position } = city;
 
